@@ -1,0 +1,17 @@
+<div class="card" [appHighlight]="cardColor">
+    <h3 [appHighlight]="color">Dish name: {{parentDish.dish | uppercase}}</h3>
+    <img class="img" src="{{parentDish.pic}}" /><br>
+    <p>Price: {{parentDish.price | currency:'USD'}}</p>
+    <label>Number of servings:</label>
+    <input type="number" [(ngModel)]="servings" />
+    <!-- if number of servings is zero -> disable button -->
+    <div *ngIf="servings>0">
+        <button (click)="buttonClick(servings)">Add to Cart</button>
+    </div>
+    <div *ngIf="servings <= 0">
+        <p>Enter number of servings required</p>
+    </div>
+
+
+
+</div>

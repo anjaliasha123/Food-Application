@@ -1,0 +1,6 @@
+<h1>Food App</h1>
+<label>Enter the ingredient to be serached for:</label>
+<input [(ngModel)]="ingredient">
+<div *ngFor="let dish of dishes | ingSearch:ingredient">
+    <app-dish [parentDish]="dish" (sumEvent)="receiveSum($event)"></app-dish>
+</div>
