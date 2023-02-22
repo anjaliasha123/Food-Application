@@ -1,0 +1,9 @@
+<h3>Users order</h3>
+<div *ngFor="let item of orders">
+    <div *ngFor="let i of item.dishes">
+        <p>Number of servings: {{i.servings}}</p>
+    </div>
+    <p>Date placed for order: {{item.datePlaced}}</p>
+    <p>Total: {{item.total}}</p>
+    <p>Order status: {{item.status}}</p>
+</div><br>

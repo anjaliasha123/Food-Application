@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-dish',
@@ -13,14 +14,17 @@ export class DishComponent implements OnInit{
   // dish: any;
   @Input() parentDish: any;  
   @Output() sumEvent = new EventEmitter();
-  input = "helo compo";
+  
+  constructor(private cartService: CartService){}
   ngOnInit(): void {
     
   }
-  buttonClick = (value: any)=>{
-    let sum = value * this.parentDish.price;
-    console.log('This is value from child: ',sum);
-    this.sumEvent.emit(sum);
+  addToCart = (value: any)=>{
+    let item = {
+      dish: this.parentDish,
+      servings: this.servings
+    }
+    this.cartService.sendToCart(item);
   }
   
 

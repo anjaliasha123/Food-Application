@@ -1,0 +1,14 @@
+<div *ngIf="cart.length > 0">
+    <h2>Your CART</h2>
+    <div *ngFor="let item of cart">
+        {{item.dish.dish}} : {{item.servings}}
+        <hr>
+    </div>
+    <br>
+    <button (click)="placeOrder()">Place Order</button>
+    <br>
+    <div *ngIf="showCart">
+        <app-orders></app-orders>
+    </div>
+
+</div>

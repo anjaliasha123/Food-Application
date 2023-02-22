@@ -11,6 +11,9 @@ import { RegisterComponent } from './register/register.component';
 import { DishComponent } from './home/dish/dish.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { IngSearchPipe } from './pipes/ing-search.pipe';
+import { CartComponent } from './home/cart/cart.component';
+import { OrdersComponent } from './home/orders/orders.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,15 @@ import { IngSearchPipe } from './pipes/ing-search.pipe';
     HeaderComponent,
     DishComponent,
     HighlightDirective,
-    IngSearchPipe
+    IngSearchPipe,
+    CartComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
